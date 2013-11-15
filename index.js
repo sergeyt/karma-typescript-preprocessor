@@ -27,7 +27,7 @@ var createTypeScriptPreprocessor = function(args, config, logger, helper) {
 			tsc(file.originalPath, file.path, opts, function(error, result) {
 				if (error) throw error;
 				done(result.js || result);
-			});
+			}, log);
 		} catch(e) {
 			log.error('%s\n  at %s', e.message, file.originalPath);
 			return;
