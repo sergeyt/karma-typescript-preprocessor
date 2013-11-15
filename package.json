@@ -1,0 +1,30 @@
+{
+  "name": "karma-typescript-preprocessor",
+  "version": "0.1.0",
+  "description": "A karma-runner plugin to compile typescript files on the fly.",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sergeyt/karma-typescript-preprocessor.git"
+  },
+  "keywords": [
+    "karma-plugin",
+    "karma-preprocessor",
+    "typescript"
+  ],
+  "author": "Sergey Todyshev <stodyshev@gmail.com>",
+  "dependencies": {
+    "typescript": "~0.9.1-1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.7.1",
+    "grunt-npm": "~0.0.2",
+    "grunt-bump": "~0.0.7",
+    "grunt-auto-release": "~0.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
