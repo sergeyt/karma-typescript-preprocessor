@@ -16,7 +16,7 @@ Just write `karma-typescript-preprocessor` as a devDependency in your `package.j
 
 Or just issue the following command:
 ```bash
-npm install karma-coffee-preprocessor --save-dev
+npm install karma-typescript-preprocessor --save-dev
 ```
 
 ## Configuration
