@@ -1,6 +1,6 @@
 {
   "name": "karma-typescript-preprocessor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A karma-runner plugin to compile typescript files on the fly.",
   "license": "MIT",
   "main": "index.js",
