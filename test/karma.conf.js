@@ -10,6 +10,12 @@ module.exports = function(config) {
 			'*.ts': ['typescript']
 		},
 
+		typescriptPreprocessor: {
+			options: {
+				sourceMap: true
+			}
+		},
+
 		files: ['*.ts'],
 
 		// list of files to exclude

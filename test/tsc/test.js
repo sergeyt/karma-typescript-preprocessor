@@ -1,4 +1,4 @@
-var tsc = require('../lib/tsc.js');
+var tsc = require('../../lib/tsc.js');
 tsc(__dirname + '/hello.ts', null,
 	{
 		sourceMap: true

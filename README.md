@@ -21,7 +21,30 @@ npm install karma-typescript-preprocessor --save-dev
 
 ## Configuration
 
-> TODO
+The code below shows the default configuration of the preprocessor.
+```js
+// karma.conf.js
+module.exports = function(config) {
+  config.set({
+    preprocessors: {
+      '**/*.ts': ['typescript']
+    },
+
+    typescriptPreprocessor: {
+      // options passed to the typescript compiler
+      options: {
+        sourceMap: false
+      },
+      // transforming the filenames
+      transformPath: function(path) {
+        return path.replace(/\.ts$/, '.js');
+      }
+    }
+  });
+};
+```
+
+If you set the `sourceMap` option to `true` then the generated source map will be inlined as a data-uri.
 
 ----
 
