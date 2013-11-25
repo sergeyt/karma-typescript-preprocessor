@@ -11,7 +11,7 @@ Just write `karma-typescript-preprocessor` as a devDependency in your `package.j
 {
   "devDependencies": {
     "karma": "~0.10",
-    "karma-coffee-preprocessor": "~0.1"
+    "karma-typescript-preprocessor": "~0.1"
   }
 }
 ```
