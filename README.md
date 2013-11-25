@@ -2,6 +2,8 @@
 
 > Preprocessor to compile TypeScript on the fly.
 
+[![NPM][npm]](https://nodei.co/npm/karma-typescript-preprocessor/)
+
 ## Installation
 
 Just write `karma-typescript-preprocessor` as a devDependency in your `package.json`.
@@ -51,3 +53,4 @@ If you set the `sourceMap` option to `true` then the generated source map will b
 For more information on Karma see the [homepage].
 
 [homepage]: http://karma-runner.github.com
+[npm]: https://nodei.co/npm/karma-typescript-preprocessor.png?downloads=true&stars=true
