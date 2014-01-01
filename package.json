@@ -18,6 +18,8 @@
     "Sergey Todyshev <stodyshev@gmail.com>"
   ],
   "dependencies": {
+    "node-tsc": "0.0.5",
+    "lodash": "~2.4.1",
     "typescript": "~0.9.5"
   },
   "devDependencies": {
