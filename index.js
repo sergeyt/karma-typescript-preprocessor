@@ -1,6 +1,7 @@
-var tsc = require('./lib/tsc.js');
-var path = require('path');
-var fs = require('fs');
+var fs = require('fs'),
+	path = require('path'),
+	_ = require('lodash'),
+	compile = require('node-tsc').compile;
 
 var createTypeScriptPreprocessor = function(args, config, logger, helper) {
 	config = config || {};
@@ -57,6 +58,25 @@ function sourceMapAsDataUri(content, file, sourceMapPath, callback) {
 		map.sourcesContent = [content];
 		map.file = path.basename(file.path);
 		callback('data:application/json;charset=utf-8;base64,' + new Buffer(JSON.stringify(map)).toString('base64'));
+	});
+}
+
+function tsc(input, output, options, callback, log) {
+
+	if (!output) {
+		output = input.replace(/\.ts$/, '.js');
+	}
+
+	var args = _.extend({}, options, {out: output});
+	compile([input], args);
+
+	fs.readFile(output, 'utf8', function(error, content) {
+		if (error) {
+			callback(error);
+			return;
+		}
+		fs.unlink(output);
+		callback(null, { js: content });
 	});
 }
 
