@@ -1,4 +1,4 @@
-# karma-typescript-preprocessor
+# karma-typescript-preprocessor [![Build Status][buildstatus]][buildstatusurl] [![Deps Status][depstatus]][depstatusurl]
 
 > Preprocessor to compile TypeScript on the fly.
 
@@ -54,3 +54,7 @@ For more information on Karma see the [homepage].
 
 [homepage]: http://karma-runner.github.com
 [npm]: https://nodei.co/npm/karma-typescript-preprocessor.png?downloads=true&stars=true
+[buildstatus]: https://drone.io/github.com/sergeyt/karma-typescript-preprocessor/status.png
+[buildstatusurl]: https://drone.io/github.com/sergeyt/karma-typescript-preprocessor/latest
+[depstatus]: https://david-dm.org/sergeyt/karma-typescript-preprocessor.png
+[depstatusurl]: https://david-dm.org/sergeyt/karma-typescript-preprocessor
