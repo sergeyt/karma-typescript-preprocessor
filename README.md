@@ -1,7 +1,8 @@
-# karma-typescript-preprocessor [![Build Status][buildstatus]][buildstatusurl] [![Deps Status][depstatus]][depstatusurl]
+# karma-typescript-preprocessor
 
 > Preprocessor to compile TypeScript on the fly.
 
+[![Build Status][buildstatus]][buildstatusurl] [![Deps Status][depstatus]][depstatusurl]
 [![NPM][npm]](https://nodei.co/npm/karma-typescript-preprocessor/)
 
 ## Installation
