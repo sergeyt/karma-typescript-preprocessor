@@ -20,11 +20,11 @@
   "dependencies": {
     "node-tsc": "0.0.5",
     "lodash": "~2.4.1",
-    "typescript": "~0.9.5"
+    "typescript": "^1.0.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.7.1",
+    "grunt-contrib-jshint": "^0.7.2",
     "grunt-npm": "~0.0.2",
     "grunt-bump": "~0.0.7",
     "grunt-auto-release": "~0.0.2",
