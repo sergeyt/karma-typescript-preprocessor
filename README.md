@@ -2,7 +2,9 @@
 
 > Preprocessor to compile TypeScript on the fly.
 
-[![Build Status][buildstatus]][buildstatusurl] [![Deps Status][depstatus]][depstatusurl]
+[![Build Status][buildstatus]][buildstatusurl]
+[![Deps Status][depstatus]][depstatusurl]
+[![devDependency Status](https://david-dm.org/sergeyt/karma-typescript-preprocessor/dev-status.svg)](https://david-dm.org/sergeyt/karma-typescript-preprocessor#info=devDependencies)
 
 [![NPM][npm]](https://nodei.co/npm/karma-typescript-preprocessor/)
 

@@ -23,13 +23,13 @@
     "typescript": "^1.0.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "^0.7.2",
+    "grunt": "~0.4",
+    "grunt-contrib-jshint": "~0.10",
     "grunt-npm": "~0.0.2",
     "grunt-bump": "~0.0.7",
-    "grunt-auto-release": "~0.0.2",
+    "grunt-auto-release": "~0.0.6",
     "grunt-coffeelint": "0.0.8",
-    "grunt-cli": "~0.1.11"
+    "grunt-cli": "~0.1"
   },
   "scripts": {
     "lint": "grunt lint",
