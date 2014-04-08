@@ -15,7 +15,8 @@
   ],
   "author": "Sergey Todyshev <stodyshev@gmail.com>",
   "contributors": [
-    "Sergey Todyshev <stodyshev@gmail.com>"
+    "Sergey Todyshev <stodyshev@gmail.com>",
+    "Keats <balthek@gmail.com>"
   ],
   "dependencies": {
     "node-tsc": "0.0.5",
