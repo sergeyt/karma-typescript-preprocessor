@@ -1,6 +1,16 @@
+/// <reference path="src/person.ts"/>
+
+function greeter(person : Person) {
+    return "Hello, " + person.firstname + " " + person.lastname;
+}
+
 describe("A suite", () => {
     it("contains spec with an expectation", () => {
         expect(true).toBe(true);
+    });
+    it("greeter", () => {
+    	var user = {firstname: "Jane", lastname: "User"};
+		console.log(greeter(user));
     });
 });
 

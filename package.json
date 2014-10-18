@@ -30,7 +30,11 @@
     "grunt-bump": "~0.0.7",
     "grunt-auto-release": "~0.0.6",
     "grunt-coffeelint": "0.0.8",
-    "grunt-cli": "~0.1"
+    "grunt-cli": "~0.1",
+    "karma": "~0.12.24",
+    "karma-jasmine": "~0.1.5",
+    "karma-chrome-launcher": "~0.1.5",
+    "karma-phantomjs-launcher": "~0.1.4"
   },
   "scripts": {
     "lint": "grunt lint",
