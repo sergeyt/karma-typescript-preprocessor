@@ -19,11 +19,11 @@
     "Keats <balthek@gmail.com>"
   ],
   "dependencies": {
-    "node-tsc": "0.0.6",
-    "lodash": "~2.4.1",
-    "typescript": "^1.0.0"
+    "node-tsc": "0.0.8",
+    "lodash": "~2.4.1"
   },
   "devDependencies": {
+	"typescript": "^1.0.0",
     "grunt": "~0.4",
     "grunt-contrib-jshint": "~0.10",
     "grunt-npm": "~0.0.2",

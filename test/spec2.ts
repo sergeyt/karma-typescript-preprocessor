@@ -1,3 +1,5 @@
+/// <reference path="../typings/jasmine/jasmine.d.ts"/>
+
 describe("The 'toBe' matcher compares with ===", () => {
     it("and has a positive case ", () => {
         expect(true).toBe(true);

@@ -1,3 +1,4 @@
+/// <reference path="../typings/jasmine/jasmine.d.ts"/>
 /// <reference path="src/person.ts"/>
 
 function greeter(person : Person) {

@@ -19,7 +19,7 @@ var createTypeScriptPreprocessor = function(args, config, logger, helper) {
 	};
 
 	return function(content, file, done) {
-		log.debug('Processing "%s".', file.originalPath);
+		log.debug('preprocessing "%s".', file.originalPath);
 		file.path = transformPath(file.originalPath);
 
 		// Clone the options because tsc.compile could mutate them
@@ -68,7 +68,18 @@ function tsc(input, output, options, callback, log) {
 	}
 
 	var args = _.extend({}, options, {out: output});
-	compile([input], args);
+	var opts = {files: [input], args: args};
+
+	if (options.compiler) {
+		delete args.compiler;
+		opts.compiler = options.compiler;
+	}
+
+	compile(opts, function(err) {
+		log.error(err);
+	});
+
+	log.debug('preprocessed');
 
 	fs.readFile(output, 'utf8', function(error, content) {
 		if (error) {
