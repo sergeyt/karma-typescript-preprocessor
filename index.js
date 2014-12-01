@@ -65,7 +65,12 @@ function tsc(input, output, options, callback, log) {
 		output = input.replace(/\.ts$/, '.js');
 	}
 
-	var args = _.extend({}, options, {out: output});
+	var args = _.clone(options);
+
+	if (!('module' in args)) {
+		args.out = output;
+	}
+
 	var opts = {files: [input], args: args};
 
 	if (options.compiler) {
