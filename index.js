@@ -26,10 +26,8 @@ var createTypeScriptPreprocessor = function(args, config, logger, helper) {
 		var opts = helper._.clone(options);
 
 		try {
-			tsc(file.originalPath, file.path, opts, function(error, result) {
+			tsc(file.originalPath, file.path, opts, function(error, output) {
 				if (error) throw error;
-
-				var output = result.js || result;
 
 				if (opts.sourceMap) {
 					sourceMapAsDataUri(content, file, file.path + '.map', function(datauri) {
@@ -87,7 +85,7 @@ function tsc(input, output, options, callback, log) {
 			return;
 		}
 		fs.unlink(output);
-		callback(null, { js: content });
+		callback(null, content);
 	});
 }
 
