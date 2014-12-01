@@ -26,7 +26,7 @@ var createTypeScriptPreprocessor = function(args, config, logger, helper) {
 		var opts = helper._.clone(options);
 
 		try {
-			tsc(file.originalPath, file.path, opts, function(error, output) {
+			tsc(file.originalPath, file.path, content, opts, function(error, output) {
 				if (error) throw error;
 
 				if (opts.sourceMap) {
@@ -59,19 +59,23 @@ function sourceMapAsDataUri(content, file, sourceMapPath, callback) {
 	});
 }
 
-function tsc(input, output, options, callback, log) {
+function tsc(inPath, outPath, content, options, callback, log) {
 
-	if (!output) {
-		output = input.replace(/\.ts$/, '.js');
+	if (!outPath) {
+		outPath = inPath.replace(/\.ts$/, '.js');
 	}
 
 	var args = _.clone(options);
 
 	if (!('module' in args)) {
-		args.out = output;
+		args.out = outPath;
 	}
 
-	var opts = {files: [input], args: args};
+	var tempInPath  = inPath + '.ktp.ts';
+	var tempOutPath = inPath + '.ktp.js';
+	var opts = {files: [tempInPath], args: args};
+
+	fs.writeFileSync(tempInPath, content);
 
 	if (options.compiler) {
 		delete args.compiler;
@@ -82,14 +86,20 @@ function tsc(input, output, options, callback, log) {
 		log.error(err);
 	});
 
+	fs.unlinkSync(tempInPath);
+
+	if (fs.existsSync(outPath)) {
+		fs.unlinkSync(outPath);
+	}
+
 	log.debug('preprocessed');
 
-	fs.readFile(output, 'utf8', function(error, content) {
-		if (error) {
-			callback(error);
+	fs.readFile(tempOutPath, 'utf8', function(readErr, content) {
+		if (readErr) {
+			callback(readErr);
 			return;
 		}
-		fs.unlink(output);
+		fs.unlinkSync(tempOutPath);
 		callback(null, content);
 	});
 }
