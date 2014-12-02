@@ -26,12 +26,12 @@ var createTypeScriptPreprocessor = function(args, config, logger, helper) {
 		var opts = helper._.clone(options);
 
 		try {
-			tsc(file.originalPath, file.path, content, opts, function(error, output) {
+			tsc(file, content, opts, function(error, output) {
 				if (error) throw error;
 
 				if (opts.sourceMap) {
-					sourceMapAsDataUri(content, file, file.path + '.map', function(datauri) {
-						fs.unlink(file.path + '.map');
+					sourceMapAsDataUri(content, file, function(datauri) {
+						fs.unlinkSync(file.sourceMapPath);
 						output = output.replace(/\/\/# sourceMappingURL=.+\.js\.map\r?\n?/i, '');
 						output += '\n//@ sourceMappingURL=' + datauri + '\n';
 						done(output);
@@ -48,34 +48,33 @@ var createTypeScriptPreprocessor = function(args, config, logger, helper) {
 	};
 };
 
-function sourceMapAsDataUri(content, file, sourceMapPath, callback) {
-	fs.readFile(sourceMapPath, 'utf8', function(error, text) {
+function sourceMapAsDataUri(content, file, callback) {
+	fs.readFile(file.sourceMapPath, 'utf8', function(error, text) {
 		if (error) throw error;
 		var map = JSON.parse(text);
 		map.sources[0] = path.basename(file.originalPath);
 		map.sourcesContent = [content];
 		map.file = path.basename(file.path);
-		callback('data:application/json;charset=utf-8;base64,' + new Buffer(JSON.stringify(map)).toString('base64'));
+		file.sourceMap = map;
+		var datauri = 'data:application/json;charset=utf-8;base64,' + new Buffer(JSON.stringify(map)).toString('base64');
+		callback(datauri);
 	});
 }
 
-function tsc(inPath, outPath, content, options, callback, log) {
-
-	if (!outPath) {
-		outPath = inPath.replace(/\.ts$/, '.js');
-	}
-
+function tsc(file, content, options, callback, log) {
 	var args = _.clone(options);
+	var input  = file.originalPath + '.ktp.ts';
+	var output = file.originalPath + '.ktp.js';
+	file.outputPath = output + '.ktp.js';
+	file.sourceMapPath = output + '.map';
 
 	if (!('module' in args)) {
-		args.out = outPath;
+		args.out = output;
 	}
 
-	var tempInPath  = inPath + '.ktp.ts';
-	var tempOutPath = inPath + '.ktp.js';
-	var opts = {files: [tempInPath], args: args};
+	var opts = {files: [input], args: args};
 
-	fs.writeFileSync(tempInPath, content);
+	fs.writeFileSync(input, content);
 
 	if (options.compiler) {
 		delete args.compiler;
@@ -86,20 +85,16 @@ function tsc(inPath, outPath, content, options, callback, log) {
 		log.error(err);
 	});
 
-	fs.unlinkSync(tempInPath);
+	fs.unlinkSync(input);
 
-	if (fs.existsSync(outPath)) {
-		fs.unlinkSync(outPath);
-	}
+	log.debug('preprocessed "%s"', file.originalPath);
 
-	log.debug('preprocessed');
-
-	fs.readFile(tempOutPath, 'utf8', function(readErr, content) {
-		if (readErr) {
-			callback(readErr);
+	fs.readFile(output, 'utf8', function(error, content) {
+		if (error) {
+			callback(error, null);
 			return;
 		}
-		fs.unlinkSync(tempOutPath);
+		fs.unlinkSync(output);
 		callback(null, content);
 	});
 }
