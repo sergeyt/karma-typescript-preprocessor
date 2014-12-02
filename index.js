@@ -87,6 +87,10 @@ function tsc(file, content, options, callback, log) {
 
 	fs.unlinkSync(input);
 
+	if (fs.existsSync(file.path)) {
+		fs.unlinkSync(file.path);
+	}
+
 	log.debug('preprocessed "%s"', file.originalPath);
 
 	fs.readFile(output, 'utf8', function(error, content) {
