@@ -97,7 +97,7 @@ describe("Included matchers:", () => {
 
     it("The 'toBeCloseTo' matcher is for precision math comparison", () => {
       var pi = 3.1415926, e = 2.78;
-        expect(pi).not.toBeCloseTo(e, 0.1);
+        expect(pi).not.toBeCloseTo(e, 1);
         expect(pi).toBeCloseTo(e, 0);
     });
 
@@ -106,7 +106,7 @@ describe("Included matchers:", () => {
             return 1 + 2;
         };
         var bar = () => {
-            //return a + 1;
+            throw new Error();
         };
         expect(foo).not.toThrow();
         expect(bar).toThrow();
