@@ -20,15 +20,15 @@
     "Keats <balthek@gmail.com>"
   ],
   "dependencies": {
-    "node-tsc": "0.0.10",
-    "lodash": "~2.4.1"
+    "node-tsc": "0.0.11",
+    "lodash": "~3.5.0"
   },
   "devDependencies": {
     "typescript": "^1.4",
     "grunt": "~0.4",
-    "grunt-contrib-jshint": "~0.10",
+    "grunt-contrib-jshint": "~0.11",
     "grunt-npm": "~0.0.2",
-    "grunt-bump": "~0.0.16",
+    "grunt-bump": "~0.3.0",
     "grunt-auto-release": "~0.0.6",
     "grunt-coffeelint": "0.0.13",
     "grunt-cli": "~0.1",
