@@ -11,6 +11,9 @@ module.exports = function(config) {
 		},
 
 		typescriptPreprocessor: {
+			typings: [
+				'../typings/jasmine/*.d.ts'
+			],
 			options: {
 				sourceMap: true
 			}
