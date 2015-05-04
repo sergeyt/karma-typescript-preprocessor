@@ -17,7 +17,8 @@
   "contributors": [
     "Sergey Todyshev <stodyshev@gmail.com>",
     "James Whitney <james@whitney.io>",
-    "Keats <balthek@gmail.com>"
+    "Keats <balthek@gmail.com>",
+    "Majid Burney <moocow@euphoricsoup.com>"
   ],
   "dependencies": {
     "node-tsc": "0.0.11",
