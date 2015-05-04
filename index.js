@@ -1,6 +1,7 @@
 var fs = require('fs'),
 	path = require('path'),
 	_ = require('lodash'),
+	glob = require('glob'),
 	compile = require('node-tsc').compile;
 
 var createTypeScriptPreprocessor = function(args, config, logger, helper) {
@@ -11,6 +12,11 @@ var createTypeScriptPreprocessor = function(args, config, logger, helper) {
 		bare: true,
 		sourceMap: false
 	};
+
+	var typingPatterns = [].concat(config.typings || []);
+	var typings = _.flatten(typingPatterns.map(function (pattern) {
+		return glob.sync(pattern);
+	}));
 
 	var options = helper.merge(defaultOptions, args.options || {}, config.options || {});
 
@@ -26,7 +32,7 @@ var createTypeScriptPreprocessor = function(args, config, logger, helper) {
 		var opts = helper._.clone(options);
 
 		try {
-			tsc(file, content, opts, function(error, output) {
+			tsc(file, content, typings, opts, function(error, output) {
 				if (error) throw error;
 
 				if (opts.sourceMap) {
@@ -61,7 +67,7 @@ function sourceMapAsDataUri(content, file, callback) {
 	});
 }
 
-function tsc(file, content, options, callback, log) {
+function tsc(file, content, typings, options, callback, log) {
 	var args = _.clone(options);
 	var input  = file.originalPath + '.ktp.ts';
 	var output = file.originalPath + '.ktp.js';
@@ -72,7 +78,7 @@ function tsc(file, content, options, callback, log) {
 		args.out = output;
 	}
 
-	var opts = {files: [input], args: args};
+	var opts = {files: [input].concat(typings), args: args};
 
 	fs.writeFileSync(input, content);
 
