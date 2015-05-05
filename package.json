@@ -22,10 +22,10 @@
   ],
   "dependencies": {
     "node-tsc": "0.0.11",
-    "lodash": "~3.5.0"
+    "lodash": "~3.5.0",
+    "glob": "^5.0.5"
   },
   "devDependencies": {
-    "glob": "^5.0.5",
     "grunt": "~0.4",
     "grunt-auto-release": "~0.0.6",
     "grunt-bump": "~0.3.0",
