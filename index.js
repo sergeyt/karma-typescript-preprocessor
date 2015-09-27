@@ -72,10 +72,11 @@ function tsc(file, content, typings, options, callback, log) {
 	var inputExtension = file.originalPath.split('.').pop();
 	var input  = file.originalPath + '.ktp.' + inputExtension;
 	var output = file.originalPath + '.ktp.js';
+	var concatinateOutput = args.concatinateOutput !== undefined ? args.concatinateOutput : !('module' in args);
 	file.outputPath = output + '.ktp.js';
 	file.sourceMapPath = output + '.map';
 
-	if (!('module' in args)) {
+	if (concatinateOutput) {
 		args.out = output;
 	}
 

@@ -45,6 +45,7 @@ module.exports = function(config) {
         noImplicitAny: true, // (optional) Warn on expressions and declarations with an implied 'any' type.
         noResolve: true, // (optional) Skip resolution and preprocessing.
         removeComments: true // (optional) Do not emit comments to output.
+        concatinateOutput: false // (optional) Concatenate and emit output to single file. By default true if module option is omited, otherwise false.
       },
       // extra typing definitions to pass to the compiler (globs allowed)
       typings: [
