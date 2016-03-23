@@ -22,25 +22,26 @@
     "Majid Burney <moocow@euphoricsoup.com>"
   ],
   "dependencies": {
-    "node-tsc": "0.0.14",
-    "lodash": "~3.10.1",
-    "glob": "^5.0.14"
+    "node-tsc": "^0.0.14",
+    "lodash": "^4.6.1",
+    "glob": "^7.0.3"
   },
   "devDependencies": {
     "coffeelint": "^1.15.0",
     "grunt": "~0.4",
     "grunt-auto-release": "~0.0.6",
-    "grunt-bump": "~0.6.0",
-    "grunt-cli": "~0.1",
-    "grunt-coffeelint": "0.0.13",
-    "grunt-contrib-jshint": "~0.11",
+    "grunt-bump": "^0.7.0",
+    "grunt-cli": "^1.1.0",
+    "grunt-coffeelint": "^0.0.15",
+    "grunt-contrib-jshint": "^1.0.0",
     "grunt-npm": "~0.0.2",
     "jasmine-core": "^2.4.1",
     "karma": "~0.13",
     "karma-chrome-launcher": "~0.2",
     "karma-jasmine": "~0.3",
-    "karma-phantomjs-launcher": "~0.2",
+    "karma-phantomjs-launcher": "^1.0.0",
     "phantomjs": "^2.1.3",
+    "phantomjs-prebuilt": "^2.1.6",
     "typescript": "^1.5"
   },
   "scripts": {
