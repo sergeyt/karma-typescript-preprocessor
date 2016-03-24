@@ -107,6 +107,9 @@ function tsc(file, content, typings, options, callback, log) {
 			return;
 		}
 		fs.unlinkSync(output);
+		if (fs.existsSync(file.path)) {
+			fs.unlinkSync(file.path);
+		}
 		callback(null, content);
 	});
 }
