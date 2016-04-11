@@ -49,7 +49,7 @@ module.exports = function(config) {
       },
       // extra typing definitions to pass to the compiler (globs allowed)
       typings: [
-        'typings/tsd.d.ts'
+        'typings/browser.d.ts'
       ],
       // transforming the filenames
       transformPath: function(path) {

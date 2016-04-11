@@ -1,4 +1,4 @@
-/// <reference path="../typings/jasmine/jasmine.d.ts"/>
+/// <reference path="../typings/browser.d.ts"/>
 
 describe("The 'toBe' matcher compares with ===", () => {
     it("and has a positive case ", () => {
