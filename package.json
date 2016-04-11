@@ -19,7 +19,9 @@
     "James Whitney <james@whitney.io>",
     "Andris Lapsa <alapsa@evolutiongaming.com>",
     "Keats <balthek@gmail.com>",
-    "Majid Burney <moocow@euphoricsoup.com>"
+    "Majid Burney <moocow@euphoricsoup.com>",
+    "Thanabodee Charoenpiriyakij <wingyminus@gmail.com>",
+    "Yohan Boutin <yohan.boutin@teads.tv>"
   ],
   "dependencies": {
     "glob": "^7.0.3",
