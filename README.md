@@ -10,17 +10,6 @@
 
 ## Installation
 
-Just write `karma-typescript-preprocessor` as a devDependency in your `package.json`.
-```json
-{
-  "devDependencies": {
-    "karma": "~0.10",
-    "karma-typescript-preprocessor": "~0.1"
-  }
-}
-```
-
-Or just issue the following command:
 ```bash
 npm install karma-typescript-preprocessor --save-dev
 ```
@@ -47,10 +36,6 @@ module.exports = function(config) {
         removeComments: true, // (optional) Do not emit comments to output.
         concatenateOutput: false // (optional) Concatenate and emit output to single file. By default true if module option is omited, otherwise false.
       },
-      // extra typing definitions to pass to the compiler (globs allowed)
-      typings: [
-        'typings/browser.d.ts'
-      ],
       // transforming the filenames
       transformPath: function(path) {
         return path.replace(/\.ts$/, '.js');
@@ -61,6 +46,8 @@ module.exports = function(config) {
 ```
 
 If you set the `sourceMap` option to `true` then the generated source map will be inlined as a data-uri.
+
+All TypeScript compiler options are defined [here](https://github.com/Microsoft/TypeScript/blob/0f67f4b6f1589756906782f1ac02e6931e1cff13/lib/typescript.d.ts#L1445-L1500).
 
 ----
 

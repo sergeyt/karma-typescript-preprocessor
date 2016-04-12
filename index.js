@@ -7,17 +7,19 @@ var createTypeScriptPreprocessor = function(args, config, logger, helper) {
 
 	var log = logger.create('preprocessor.typescript');
 	var defaultOptions = {};
-    
-    var typingPatterns = [].concat(config.typings || []);
-	var typings = _.flatten(typingPatterns.map(function (pattern) {
-		return glob.sync(pattern);
-	}));
+
+	var transformPath = args.transformPath || config.transformPath || function(filepath) {
+		return filepath.replace(/\.ts$/, '.js');
+	};
 
 	// compiler options
 	var options = helper.merge(defaultOptions, args.options || {}, config.options || {});
-    var compiler = new tss.TypeScriptSimple(options, true, typings);
+	var compiler = new tss.TypeScriptSimple(options, false);
 
 	return function(content, file, done) {
+		log.debug('Processing "%s".', file.originalPath);
+		file.path = transformPath(file.originalPath);
+
 		try {
 			var output = compiler.compile(content, file.originalPath);
 			done(output);

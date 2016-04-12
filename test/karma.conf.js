@@ -11,9 +11,6 @@ module.exports = function(config) {
 		},
 
 		typescriptPreprocessor: {
-			typings: [
-				'../typings/browser.d.ts'
-			],
 			options: {
 				sourceMap: true
 			}
@@ -27,7 +24,7 @@ module.exports = function(config) {
 		// test results reporter to use
 		// possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
 		reporters: ['dots'],
-		
+
 		// web server port
 		port: 9876,
 
