@@ -6,6 +6,9 @@ function greeter(person : Person) {
 
 describe("A suite", () => {
     it("contains spec with an expectation", () => {
+        const foo = { bar: 'foo.bar' };
+        const s = `${foo.bar}.blabla`;
+        console.log(s);
         expect(true).toBe(true);
     });
     it("greeter", () => {
