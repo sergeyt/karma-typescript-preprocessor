@@ -1,5 +1,3 @@
-var _ = require('lodash');
-var glob = require('glob');
 var tss = require('typescript-simple');
 
 var createTypeScriptPreprocessor = function(args, config, logger, helper) {

@@ -24,8 +24,6 @@
     "Yohan Boutin <yohan.boutin@teads.tv>"
   ],
   "dependencies": {
-    "glob": "^7.0.3",
-    "lodash": "^4.10.0",
     "typescript": "^1.8.9",
     "typescript-simple": "^5.0.2"
   },
