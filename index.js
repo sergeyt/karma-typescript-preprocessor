@@ -22,10 +22,10 @@ var createTypeScriptPreprocessor = function(args, config, logger, helper) {
 
 		try {
 			var output = compiler.compile(content, file.originalPath);
-			done(output);
+			done(null, output);
 		} catch(e) {
-			log.error('%s\n  at %s', e.message, file.originalPath);
-			return;
+			log.error('%s\n at %s\n%s', e.message, file.originalPath, e.stack);
+			return done(e, null);
 		}
 	};
 };
