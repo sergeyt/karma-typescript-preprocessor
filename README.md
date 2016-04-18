@@ -2,11 +2,10 @@
 
 > Preprocessor to compile TypeScript on the fly.
 
-[![Build Status][buildstatus]][buildstatusurl]
-[![Deps Status][depstatus]][depstatusurl]
+[![Build Status][https://drone.io/github.com/sergeyt/karma-typescript-preprocessor/status.png]](https://drone.io/github.com/sergeyt/karma-typescript-preprocessor/latest)
+[![Deps Status][https://david-dm.org/sergeyt/karma-typescript-preprocessor.png]](https://david-dm.org/sergeyt/karma-typescript-preprocessor)
 [![devDependency Status](https://david-dm.org/sergeyt/karma-typescript-preprocessor/dev-status.svg)](https://david-dm.org/sergeyt/karma-typescript-preprocessor#info=devDependencies)
-
-[![NPM][npm]](https://nodei.co/npm/karma-typescript-preprocessor/)
+[![npm](https://img.shields.io/npm/dt/karma-typescript-preprocessor.svg?maxAge=2592000)](https://www.npmjs.com/package/karma-typescript-preprocessor)
 
 ## Installation
 
@@ -51,11 +50,5 @@ All TypeScript compiler options are defined [here](https://github.com/Microsoft/
 
 ----
 
-For more information on Karma see the [homepage].
+For more information on Karma see the [homepage](http://karma-runner.github.com).
 
-[homepage]: http://karma-runner.github.com
-[npm]: https://nodei.co/npm/karma-typescript-preprocessor.png?downloads=true&stars=true
-[buildstatus]: https://drone.io/github.com/sergeyt/karma-typescript-preprocessor/status.png
-[buildstatusurl]: https://drone.io/github.com/sergeyt/karma-typescript-preprocessor/latest
-[depstatus]: https://david-dm.org/sergeyt/karma-typescript-preprocessor.png
-[depstatusurl]: https://david-dm.org/sergeyt/karma-typescript-preprocessor
