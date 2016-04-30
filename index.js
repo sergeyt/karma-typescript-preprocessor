@@ -1,4 +1,5 @@
 var tss = require('typescript-simple');
+var path = require('path');
 
 var createTypeScriptPreprocessor = function(args, config, logger, helper) {
 	config = config || {};
@@ -19,7 +20,7 @@ var createTypeScriptPreprocessor = function(args, config, logger, helper) {
 		file.path = transformPath(file.originalPath);
 
 		try {
-			var output = compiler.compile(content, file.originalPath);
+			var output = compiler.compile(content, path.relative(process.cwd(), file.originalPath));
 			done(null, output);
 		} catch(e) {
 			log.error('%s\n at %s\n%s', e.message, file.originalPath, e.stack);
