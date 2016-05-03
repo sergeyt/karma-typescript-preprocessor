@@ -21,7 +21,8 @@
     "Keats <balthek@gmail.com>",
     "Majid Burney <moocow@euphoricsoup.com>",
     "Thanabodee Charoenpiriyakij <wingyminus@gmail.com>",
-    "Yohan Boutin <yohan.boutin@teads.tv>"
+    "Yohan Boutin <yohan.boutin@teads.tv>",
+    "joe-re <joe.tialtngo@gmail.com>"
   ],
   "dependencies": {
     "typescript": "^1.8.10",
