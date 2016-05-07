@@ -2,7 +2,7 @@
 
 > Preprocessor to compile TypeScript on the fly.
 
-[![Build Status](https://drone.io/github.com/sergeyt/karma-typescript-preprocessor/status.png)](https://drone.io/github.com/sergeyt/karma-typescript-preprocessor/latest)
+[![Build Status](https://travis-ci.org/sergeyt/karma-typescript-preprocessor.svg?branch=master)](https://travis-ci.org/sergeyt/karma-typescript-preprocessor)
 [![Deps Status](https://david-dm.org/sergeyt/karma-typescript-preprocessor.png)](https://david-dm.org/sergeyt/karma-typescript-preprocessor)
 [![devDependency Status](https://david-dm.org/sergeyt/karma-typescript-preprocessor/dev-status.svg)](https://david-dm.org/sergeyt/karma-typescript-preprocessor#info=devDependencies)
 [![npm](https://img.shields.io/npm/dt/karma-typescript-preprocessor.svg?maxAge=2592000)](https://www.npmjs.com/package/karma-typescript-preprocessor)
