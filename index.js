@@ -1,4 +1,3 @@
-var ts = require('typescript');
 var path = require('path');
 
 var createTypeScriptPreprocessor = function(args, config, logger, helper) {
@@ -13,6 +12,7 @@ var createTypeScriptPreprocessor = function(args, config, logger, helper) {
 
 	// compiler options
 	var options = helper.merge(defaultOptions, args.options || {}, config.options || {});
+	var ts = config.typescript || require('typescript');
 
 	return function(content, file, done) {
 		log.debug('Processing "%s".', file.originalPath);
