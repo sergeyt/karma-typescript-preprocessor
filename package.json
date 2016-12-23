@@ -29,6 +29,7 @@
     "typescript": "^2.1.4"
   },
   "devDependencies": {
+    "@types/jasmine": "^2.5.38",
     "coffeelint": "^1.16.0",
     "grunt": "^1.0.1",
     "grunt-auto-release": "^0.0.6",
