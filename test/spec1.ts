@@ -12,8 +12,8 @@ describe("A suite", () => {
         expect(true).toBe(true);
     });
     it("greeter", () => {
-    	var user = {firstname: "Jane", lastname: "User"};
-		console.log(greeter(user));
+      var user = {firstname: "Jane", lastname: "User"};
+      console.log(greeter(user));
     });
 });
 
