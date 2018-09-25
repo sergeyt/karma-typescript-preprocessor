@@ -19,8 +19,11 @@ var createTypeScriptPreprocessor = function(args, config, logger, helper) {
 		file.path = transformPath(file.originalPath);
 
 		try {
-			var output = ts.transpile(content, options, path.relative(process.cwd(), file.originalPath));
-			done(null, output);
+			var output = ts.transpileModule(content, {
+				compilerOptions: options,
+				fileName: path.relative(process.cwd(), file.originalPath),
+			});
+			done(null, output.outputText);
 		} catch(e) {
 			log.error('%s\n at %s\n%s', e.message, file.originalPath, e.stack);
 			return done(e, null);
