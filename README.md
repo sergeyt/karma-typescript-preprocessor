@@ -24,6 +24,8 @@ module.exports = function(config) {
       '**/*.ts': ['typescript']
     },
 
+    plugins: ['karma-typescript-preprocessor'],
+
     typescriptPreprocessor: {
       // options passed to the typescript compiler
       options: {
