@@ -44,9 +44,7 @@
     "karma-chrome-launcher": "^3.1.0",
     "karma-cli": "^2.0.0",
     "karma-jasmine": "^3.1.1",
-    "karma-phantomjs-launcher": "^1.0.4",
-    "phantomjs": "^2.1.7",
-    "phantomjs-prebuilt": "^2.1.16"
+    "puppeteer": "^2.1.1"
   },
   "scripts": {
     "lint": "grunt lint",

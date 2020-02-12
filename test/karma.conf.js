@@ -1,65 +1,59 @@
 module.exports = function(config) {
-	config.set({
-		// base path, that will be used to resolve files and exclude
-		basePath: '',
+  config.set({
+    // base path, that will be used to resolve files and exclude
+    basePath: "",
 
-		// frameworks to use
-		frameworks: ['jasmine'],
+    // frameworks to use
+    frameworks: ["jasmine"],
 
-		preprocessors: {
-			'*.ts': ['typescript']
-		},
+    preprocessors: {
+      "*.ts": ["typescript"]
+    },
 
-		typescriptPreprocessor: {
-			options: {
-				sourceMap: true
-			}
-		},
+    typescriptPreprocessor: {
+      options: {
+        sourceMap: true
+      }
+    },
 
-		files: ['*.ts'],
+    files: ["*.ts"],
 
-		// list of files to exclude
-		exclude: [],
+    // list of files to exclude
+    exclude: [],
 
-		// test results reporter to use
-		// possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-		reporters: ['dots'],
+    // test results reporter to use
+    // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
+    reporters: ["dots"],
 
-		// web server port
-		port: 9873,
+    // web server port
+    port: 9873,
 
-		// enable / disable colors in the output (reporters and logs)
-		colors: true,
+    // enable / disable colors in the output (reporters and logs)
+    colors: true,
 
-		// level of logging
-		// possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-		logLevel: config.LOG_DEBUG,
+    // level of logging
+    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+    logLevel: config.LOG_DEBUG,
 
-		// enable / disable watching file and executing tests whenever any file changes
-		autoWatch: false,
+    // enable / disable watching file and executing tests whenever any file changes
+    autoWatch: false,
 
-		// Start these browsers, currently available:
-		// - Chrome
-		// - ChromeCanary
-		// - Firefox
-		// - Opera
-		// - Safari (only Mac)
-		// - PhantomJS
-		// - IE (only Windows)
-		browsers: ['PhantomJS'],
+    browsers: ["ChromeX"],
 
-		// If browser does not capture in given timeout [ms], kill it
-		captureTimeout: 60000,
+    customLaunchers: {
+      ChromeX: {
+        base: "ChromeHeadless",
+        flags: ["--no-sandbox"]
+      }
+    },
 
-		// Continuous Integration mode
-		// if true, it capture browsers, run tests and exit
-		singleRun: true,
+    // If browser does not capture in given timeout [ms], kill it
+    captureTimeout: 60000,
 
-		plugins: [
-			'karma-jasmine',
-			'karma-chrome-launcher',
-			'karma-phantomjs-launcher',
-			require('../index.js')
-		]
-	});
+    // Continuous Integration mode
+    // if true, it capture browsers, run tests and exit
+    singleRun: true,
+
+    plugins: ["karma-jasmine", "karma-chrome-launcher", require("../index.js")]
+  });
 };
